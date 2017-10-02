@@ -1,6 +1,6 @@
 {
-  "name": "Rails Clone Reddit",
-  "description": "Ruby on Rails application that mimics social news link sharing websites like HackerNews, ProductHunt, and Reddit.",
+  "name": "Byrdie Beauty Community",
+  "description": "Share your favorite beauty tips (invite only)",
   "repository": "https://github.com/blairanderson/rails-hackernews-reddit-producthunt-clone",
   "logo": "https://cdn.rawgit.com/blairanderson/rails-hackernews-reddit-producthunt-clone/master/public/rrhnclone.png",
   "keywords": ["rails", "ruby-on-rails", "hackernews", "producthunt", "reddit"],
