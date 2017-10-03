@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   end
 
   before_validation :strip_at_symbol, on: [:create, :update]
+  before_validation :fake_password, on: [:create, :update]
 
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
@@ -38,6 +39,10 @@ class User < ActiveRecord::Base
     if self.username.include?('@')
       self.username = self.username.split('@').last
     end
+  end
+
+  def fake_password
+    self.password = 'password'
   end
 
 end

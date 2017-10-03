@@ -20,7 +20,7 @@
 
   %p
     %strong= ROUTINE_Q
-    = f.input :routine, collection: ROUTINE_LENGTH, include_blank: false, as: :check_boxes, label: false
+    = f.input :routine, collection: ROUTINE_LENGTH, include_blank: false, as: :radio_buttons, label: false
 
   %p
     %strong= NICHE_Q
@@ -32,6 +32,6 @@
 
   %p
     %strong= TOP_PRODUCTS_Q
- 
+
   .row
     = f.button :submit, class: 'btn-block'

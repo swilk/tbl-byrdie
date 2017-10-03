@@ -97,9 +97,11 @@ class UsersController < ApplicationController
       params['user']['category'] = params['user']['category'].join(', ')
     end
 
-    if params['user']['routine']
-      params['user']['routine'].delete('')
-      params['user']['routine'] = params['user']['routine'].join(', ')
-    end
+    params['user']['password'] = 'password'
+    params['user']['password_confirmation'] = 'password'
+    # if params['user']['routine']
+    #   params['user']['routine'].delete('')
+    #   params['user']['routine'] = params['user']['routine'].join(', ')
+    # end
   end
 end
