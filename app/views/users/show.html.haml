@@ -24,14 +24,19 @@
     %strong Makeup:
     = @user.makeup
 
+- unless @user.routine.blank?
+  %p
+    %strong Makeup Routine:
+    = @user.routine
+
 - unless @user.niche.blank?
   %p
-    %strong Niche:
+    %strong Niche Interests:
     = @user.niche
 
 - unless @user.category.blank?
   %p
-    %strong Beauty Category:
+    %strong Favorite Beauty Category:
     = @user.category
 
 %br/

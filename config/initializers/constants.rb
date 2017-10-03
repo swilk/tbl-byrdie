@@ -1,3 +1,5 @@
+
+HAIR_TYPE_Q = 'How would you describe your hair type?'
 HAIR_TYPES = [
   'Curly',
   'Thin',
@@ -7,6 +9,7 @@ HAIR_TYPES = [
   'None of these',
 ]
 
+SKIN_TYPE_Q = 'How would you describe your skincare concerns?'
 SKIN_TYPES = [
   'Dryness',
   'Acne',
@@ -17,6 +20,7 @@ SKIN_TYPES = [
   'None of these',
 ]
 
+MAKEUP_Q = 'How would you describe your makeup aesthetic?'
 MAKEUP = [
   'On Trend',
   'Natural',
@@ -25,18 +29,31 @@ MAKEUP = [
   'None of these',
 ]
 
-NICHES = [
-  'Newness',
+ROUTINE_Q = 'How long do you spend on your morning makeup routine?'
+ROUTINE_LENGTH = [
+  '2 minutes',
+  '5 minutes',
+  '10 minutes',
+  '15 minutes',
+  '20 minutes plus',
+]
+
+NICHE_Q = 'Which of the following are you interested in?'
+NICHE_INTERESTS = [
+  'New Releases',
   'Korean',
   'Natural',
   'Organic',
+  'Indie',
   'None of these',
 ]
 
+BEAUTY_CATEGORY_Q = 'Which of the following are you interested in?'
 BEAUTY_CATEGORIES = [
   'Hair',
   'Skin',
   'Fragrance',
   'Makeup',
-  'None of these',
 ]
+
+TOP_PRODUCTS_Q = 'To finish your profile, let us know your top 5 beauty products right now.'

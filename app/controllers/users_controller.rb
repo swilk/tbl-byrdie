@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    merge_params
     @user = User.new(user_params)
 
     if @user.save
@@ -27,6 +28,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    merge_params
+
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
@@ -60,6 +63,43 @@ class UsersController < ApplicationController
       :makeup,
       :niche,
       :category,
+      :routine,
+      # products_attributes: [:id, :product_id],
+      # products: [:product_id],
+      # products_users: [ :product_id, :id, :title ],
     )
+  end
+
+  # This is just a hack to be able to multi-select survey attributes.
+  def merge_params
+    if params['user']['hair_type']
+      params['user']['hair_type'].delete('')
+      params['user']['hair_type'] = params['user']['hair_type'].join(', ')
+    end
+
+    if params['user']['skin_type']
+      params['user']['skin_type'].delete('')
+      params['user']['skin_type'] = params['user']['skin_type'].join(', ')
+    end
+
+    if params['user']['makeup']
+      params['user']['makeup'].delete('')
+      params['user']['makeup'] = params['user']['makeup'].join(', ')
+    end
+
+    if params['user']['niche']
+      params['user']['niche'].delete('')
+      params['user']['niche'] = params['user']['niche'].join(', ')
+    end
+
+    if params['user']['category']
+      params['user']['category'].delete('')
+      params['user']['category'] = params['user']['category'].join(', ')
+    end
+
+    if params['user']['routine']
+      params['user']['routine'].delete('')
+      params['user']['routine'] = params['user']['routine'].join(', ')
+    end
   end
 end

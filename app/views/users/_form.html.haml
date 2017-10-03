@@ -6,10 +6,32 @@
   -#= f.input :password_confirmation, as: :password
   = f.input :about
 
-  = f.input :hair_type, collection: HAIR_TYPES, include_blank: false, label: 'Hair Type', as: :radio_buttons
-  = f.input :skin_type, collection: SKIN_TYPES, include_blank: false, label: 'Skin Type', as: :radio_buttons
-  = f.input :makeup, collection: MAKEUP, include_blank: false, as: :radio_buttons
-  = f.input :niche, collection: NICHES, include_blank: false, as: :radio_buttons
-  = f.input :category, collection: BEAUTY_CATEGORIES, include_blank: false, as: :radio_buttons
+  %p
+    %strong= HAIR_TYPE_Q
+    = f.input :hair_type, collection: HAIR_TYPES, include_blank: false, label: false, as: :check_boxes
+
+  %p
+    %strong= SKIN_TYPE_Q
+    = f.input :skin_type, collection: SKIN_TYPES, include_blank: false, label: false, as: :check_boxes
+
+  %p
+    %strong= MAKEUP_Q
+    = f.input :makeup, collection: MAKEUP, include_blank: false, as: :check_boxes, label: false
+
+  %p
+    %strong= ROUTINE_Q
+    = f.input :routine, collection: ROUTINE_LENGTH, include_blank: false, as: :check_boxes, label: false
+
+  %p
+    %strong= NICHE_Q
+    = f.input :niche, collection: NICHE_INTERESTS, include_blank: false, as: :check_boxes, label: false
+
+  %p
+    %strong= BEAUTY_CATEGORY_Q
+    = f.input :category, collection: BEAUTY_CATEGORIES, include_blank: false, as: :check_boxes, label: false
+
+  %p
+    %strong= TOP_PRODUCTS_Q
+ 
   .row
     = f.button :submit, class: 'btn-block'
