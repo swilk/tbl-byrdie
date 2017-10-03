@@ -1,0 +1,6 @@
+- if flash[:notice] || flash[:alert]
+  .alert
+    - if flash[:notice]
+      %p.alert.alert-warning= flash[:notice]
+    - if flash[:alert]
+      %p.alert.alert-danger= flash[:alert]

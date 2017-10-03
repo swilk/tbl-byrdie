@@ -1,0 +1,7 @@
+%li.list-group-item
+  .pull-right
+    = link_to 'Edit', edit_admin_item_path(item)
+    = link_to 'Destroy', admin_item_path(item), method: :delete, data: {confirm: 'Are you sure?'}
+  %div= link_to item.title, item
+  %div= item.url
+  %div= item.content
