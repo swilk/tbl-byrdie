@@ -9,24 +9,24 @@
 %p
   %strong
     %h1= link_to @item.title, @item, title: @item.url
-    %small
-      (#{@item.url})
+    - unless @item.url.blank?
+      %small= "(#{@item.url})"
   %span
     %small
-      (posted by: #{link_to @item.user.username, user_path(@item.user)})
-      -#(posted by: #{link_to @item.user.username, @item.user})
-%ul
-  - if current_user
-    %li
-      = simple_form_for([@item, current_user.item_comments.build]) do |f|
-        = f.input :content, label: false, required: true
-        = f.button :submit
+      asked by: #{link_to @item.user.username, user_path(@item.user)}
+
+%p
   - @comments.each do |comment|
-    = content_tag_for(:li, comment) do
-      %span
-        created: #{link_to time_ago_in_words(comment.created_at), item_path(@item, anchor: "comment")} ago.
-        %small
-          (posted by: #{link_to comment.user.username, comment.user})
-      %br/
+    %span
       %small
-        = comment.content
+        #{link_to comment.user.username, comment.user} (#{link_to time_ago_in_words(comment.created_at), item_path(@item, anchor: "comment")} ago):
+    %br/
+    = comment.content
+    %br/
+    %br/
+
+
+  - if current_user
+    = simple_form_for([@item, current_user.item_comments.build]) do |f|
+      = f.input :content, label: false, required: true
+      = f.button :submit, 'Answer'
