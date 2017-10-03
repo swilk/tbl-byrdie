@@ -8,22 +8,43 @@
   %p
     %strong About:
     = @user.about
-%p
-  %strong Hair Type:
-  = @user.hair_type
 
-%p
-  %strong Skin Type:
-  = @user.skin_type
+- unless @user.hair_type.blank?
+  %p
+    %strong Hair Type:
+    = @user.hair_type
 
-%p
-  %strong Makeup:
-  = @user.makeup
+- unless @user.skin_type.blank?
+  %p
+    %strong Skin Type:
+    = @user.skin_type
 
-%p
-  %strong Niche:
-  = @user.niche
+- unless @user.makeup.blank?
+  %p
+    %strong Makeup:
+    = @user.makeup
 
-%p
-  %strong Beauty Category:
-  = @user.category
+- unless @user.niche.blank?
+  %p
+    %strong Niche:
+    = @user.niche
+
+- unless @user.category.blank?
+  %p
+    %strong Beauty Category:
+    = @user.category
+
+%br/
+
+- unless @user.items.blank?
+  %p
+    %strong= "Questions Asked by #{@user.username}:"
+
+  - @user.items.each do |question|
+    %br/
+    = link_to(question.title, item_path(question))
+    %span
+      %small
+        ="(#{time_ago_in_words(question.created_at)} ago)"
+        -##{link_to question.user.username, question.user} (#{time_ago_in_words(question.created_at)} ago):
+    %br/

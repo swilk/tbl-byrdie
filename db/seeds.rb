@@ -16,10 +16,10 @@ admin = User.create({
   })
 
 user = User.create({
-    username: "user",
+    username: "SophiaAP",
     password: "password",
     password_confirmation: "password",
-    about: "About the Basic user",
+    about: "Yay beauty products!",
   })
 
 disabled_user = User.create({
@@ -36,7 +36,6 @@ disabled_user = User.create({
   {title: "I would like to get my teenage niece her first makeup items. Can anyone recommend makeup for a teenager with dark hair, brown eyes and olive skin tone?", content: "I wanna know!"},
   {title: "Does rogaine work on eyebrows?", content: "I wanna know!"},
   {title: "Has anyone tried Kristen Ess's hair products from Target? Thoughts?", content: "I wanna know!"},
-  {title: "Best smudgable pencil eyeliner I can go pick up at Sephora?", content: "I wanna know!"},
 ].each do |item|
   #admin.items.create(item)
   user.items.create(item)
