@@ -1,12 +1,10 @@
 %p
-  %strong Username:
-  = @user.username
-%p
   %strong Instagram Handle:
-  swilk
+  = link_to(@user.username, "https://www.instagram.com/#{@user.username}")
 %p
   %strong Karma:
   = @user.karma
-%p
-  %strong About:
-  = @user.about
+- unless @user.about.blank?
+  %p
+    %strong About:
+    = @user.about
