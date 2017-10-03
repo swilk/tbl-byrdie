@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   private
   def set_user
     @user = User.friendly.find(params[:id])
-    
+
     unless @user
       return redirect_back_or_to root_path, notice: 'could not find user'
     end
@@ -54,7 +54,12 @@ class UsersController < ApplicationController
       :username,
       :password,
       :password_confirmation,
-      :about
+      :about,
+      :hair_type,
+      :skin_type,
+      :makeup,
+      :niche,
+      :category,
     )
   end
 end
