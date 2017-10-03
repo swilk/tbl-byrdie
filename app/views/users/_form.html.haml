@@ -4,7 +4,7 @@
   = f.input :id, as: :hidden
   -#= f.input :password, as: :password
   -#= f.input :password_confirmation, as: :password
-  = f.input :about
+  -#= f.input :about
 
   %p
     %strong= HAIR_TYPE_Q
@@ -30,8 +30,9 @@
     %strong= BEAUTY_CATEGORY_Q
     = f.input :category, collection: BEAUTY_CATEGORIES, include_blank: false, as: :check_boxes, label: false
 
-  %p
+  -#%p
     %strong= TOP_PRODUCTS_Q
 
   .row
-    = f.button :submit, class: 'btn-block'
+    = image_submit_tag ("https://www.blokables.com/assets/icons/insta-button-dcf52c4619ef6c357cb101ae0827b9cb5a3611de4c7a7ba462f257fcd701eeaa.png"), width: '200'
+    -#= f.button :submit, class: 'btn-block'
