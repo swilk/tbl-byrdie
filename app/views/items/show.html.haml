@@ -13,7 +13,8 @@
       (#{@item.url})
   %span
     %small
-      (posted by: #{link_to @item.user.username, @item.user})
+      (posted by: #{link_to @item.user.username, user_path(@item.user)})
+      -#(posted by: #{link_to @item.user.username, @item.user})
 %ul
   - if current_user
     %li

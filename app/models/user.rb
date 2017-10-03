@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   before_create do
     begin
       self.token = SecureRandom.hex

@@ -41,7 +41,8 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = User.where(username: params[:id]).first
+    @user = User.friendly.find(params[:id])
+    
     unless @user
       return redirect_back_or_to root_path, notice: 'could not find user'
     end

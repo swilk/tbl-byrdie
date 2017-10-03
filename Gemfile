@@ -18,6 +18,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'haml'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   # better server logs!
