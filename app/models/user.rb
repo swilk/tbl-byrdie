@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
     end while self.class.exists?(token: token)
   end
 
+  before_validation :strip_at_symbol, on: [:create, :update]
 
   validates :password, length: { minimum: 5 }, if: :password
   validates :password, confirmation: true, if: :password
@@ -31,6 +32,12 @@ class User < ActiveRecord::Base
 
   def username
     disabled? ? "[deleted]" : read_attribute(:username)
+  end
+
+  def strip_at_symbol
+    if self.username.include?('@')
+      self.username = self.username.split('@').last
+    end
   end
 
 end
